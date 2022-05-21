@@ -2,6 +2,7 @@ namespace SpriteKind {
     export const ground = SpriteKind.create()
     export const Weapon = SpriteKind.create()
     export const Start = SpriteKind.create()
+    export const Monster = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
     currentLevel += 1
@@ -16,6 +17,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         projectile2 = sprites.createProjectileFromSprite(assets.image`phi_tieu`, ninja, -100, 0)
     }
 })
+function monsterRun () {
+    Monster01.setVelocity(-30, 0)
+    Monster02.setVelocity(-30, 0)
+    Monster03.setVelocity(-30, 0)
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile5 = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . 1 c . . . 
@@ -64,8 +70,25 @@ function mainDie () {
     info.changeLifeBy(-1)
     tiles.placeOnTile(ninja, tiles.getTileLocation(0, 1))
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Monster, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    mainDie()
+})
+function createMonster () {
+    Monster01 = sprites.create(assets.image`monster01`, SpriteKind.Monster)
+    Monster02 = sprites.create(assets.image`monster03`, SpriteKind.Monster)
+    Monster03 = sprites.create(assets.image`monster02`, SpriteKind.Monster)
+    tiles.placeOnTile(Monster01, tiles.getTileLocation(6, 11))
+    tiles.placeOnTile(Monster02, tiles.getTileLocation(11, 20))
+    tiles.placeOnTile(Monster03, tiles.getTileLocation(20, 23))
+}
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     rightdir = true
+})
+scene.onOverlapTile(SpriteKind.Monster, sprites.dungeon.floorLight0, function (sprite, location) {
+    Monster01.setVelocity(-40, 0)
+    Monster02.setVelocity(-70, 0)
+    Monster02.setVelocity(-72, 0)
 })
 function setLevelMap (lv: number) {
     clearMap()
@@ -73,12 +96,21 @@ function setLevelMap (lv: number) {
         tiles.setCurrentTilemap(tilemap`map-demo`)
     } else {
         tiles.setCurrentTilemap(tilemap`tilemap1`)
+        createMonster()
+        monsterRun()
     }
     setMain()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`trap`, function (sprite, location) {
     info.changeScoreBy(-1)
     mainDie()
+})
+scene.onOverlapTile(SpriteKind.Monster, sprites.dungeon.purpleOuterWest1, function (sprite, location) {
+    Monster01.setVelocity(40, 0)
+    Monster02.setVelocity(70, 0)
+})
+scene.onOverlapTile(SpriteKind.Monster, assets.tile`trap`, function (sprite, location) {
+    Monster03.setVelocity(72, 0)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`dameTile1`, function (sprite, location) {
     info.changeScoreBy(-1)
@@ -90,6 +122,9 @@ function clearMap () {
     }
 }
 let projectile5: Sprite = null
+let Monster03: Sprite = null
+let Monster02: Sprite = null
+let Monster01: Sprite = null
 let projectile2: Sprite = null
 let projectile: Sprite = null
 let rightdir = false
