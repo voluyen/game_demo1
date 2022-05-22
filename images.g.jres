@@ -39,6 +39,21 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "weapon1"
     },
+    "m:O~Pcy||vQSl]@/bskY": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIgAAAAA0Im7iwAAAACdaGbGCAAAAIlm/2aGAACQaGZm9sYIAJ24Zv9mxggAnchmZmbGCACdiGZmZowIAN2IyGbGiAAA0IqIu4yoAADQrYiIiAoAAADdqoioAAAAAACgqgoAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "monster01"
+    },
+    "]qqFlX8:7ggRLH": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wAAAABAT8L8/wBEQPTEzML2QFVU9SLMzP9EVFVV/8TMDwBEVFX1wsIPAAD0/y/MzA8AAPAixMzM/wAA8ELCzMz2AADw/yLMZv8AAADw////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "monster02"
+    },
+    "Ea0O0Ff#0FQ_wo?,7T(c": {
+        "data": "hwQQABAAAAAA8P8AAAAAAACvqv8AAAAAAPDPqg/wDwAAAPDP/K8PAPD///D8+gAAH9vd////AAAfvdL9yM0AAB/d3f/IzMAMH93d/dgM3AwfvdL/yM3MDB/b3W9o3QwAH929b3jGzAwf3btveGdmDPCx+4Z3d2cMAP8PZmaHiAYAAAAAAGZmAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "monster03"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",

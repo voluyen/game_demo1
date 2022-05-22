@@ -155,6 +155,63 @@ c c c c c c c c c c c c c c c c
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
+            case "m:O~Pcy||vQSl]@/bskY":
+            case "monster01":return img`
+. . . . . . . d d d d . . . . . 
+. . . . . . 9 9 9 9 d d d . . . 
+. . . . d 9 8 8 8 8 8 a d d . . 
+. . . d 9 8 6 b c 8 8 8 a d . . 
+. . . 9 8 6 6 6 6 6 8 8 8 a . . 
+. . . 8 6 6 6 6 6 6 c 8 8 a a . 
+. . 8 b 6 f 6 f 6 6 6 b 8 8 a . 
+. . 8 b 6 f 6 f 6 6 6 b 8 8 a . 
+. . 8 b 6 6 6 6 6 6 6 c 8 8 a . 
+. . 8 8 c 6 f 6 6 6 c 8 8 a . . 
+. . . . 8 6 6 6 6 c 8 8 a . . . 
+. . . . . 8 c c c 8 8 a . . . . 
+. . . . . . 8 8 8 8 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "]qqFlX8:7ggRLH":
+            case "monster02":return img`
+. . . . . . 4 . . . . . . . . . 
+. . . . . 4 4 . . . . . . . . . 
+. . . . 4 5 4 4 . . . . . . . . 
+. . . . 4 5 5 4 . . . . . . . . 
+. . . . . 4 5 4 4 . . . . . . . 
+. . . . 4 5 5 5 f f f f . . . . 
+. . . . 4 5 5 5 f 2 2 f . . . . 
+. . . 4 f f 5 5 f 2 4 f f . . . 
+. . f f 4 2 f 5 f 4 2 2 f . . . 
+. . f 4 c 2 f f 2 c c 2 f . . . 
+. . f 2 c c 4 2 c c c c f . . . 
+. . f c c c c c c c c c f . . . 
+. . f c 2 c c 2 c c c 6 f . . . 
+. . f f c c c c c c c 6 f . . . 
+. . . f 6 f f f f f 6 f . . . . 
+. . . f f f . . . f f f . . . . 
+`;
+            case "Ea0O0Ff#0FQ_wo?,7T(c":
+            case "monster03":return img`
+. . . . . f f f f f f f f . . . 
+. . . . f 1 1 1 1 1 1 1 1 f . . 
+. f . . f b d d d d b d d 1 f . 
+f a f . f d b d d b d d d b f . 
+f a f . f d 2 d d 2 d d b b f . 
+f a c f f d d d d d d b b f . . 
+. f a f . f d f d f f f f 6 6 . 
+. f a c f f f f f f 6 6 6 8 6 . 
+. . f c c f 8 8 8 8 8 8 8 7 6 . 
+. . . f f f c c d c 6 7 7 7 6 . 
+. . . f a f d c c d d 6 7 7 7 6 
+. . f a f f c c . c d c 6 7 8 6 
+. . f f . . . . c c c c 6 7 8 6 
+. . . . . . . c d c . c 6 6 8 6 
+. . . . . . . c c c . c c c 6 . 
+. . . . . . . . . . . . . . . . 
+`;
         }
         return null;
     })
