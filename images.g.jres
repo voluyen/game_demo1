@@ -39,21 +39,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "weapon1"
     },
-    "image8": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAADQiIgAAAAA0ImqigAAAACdaGbGCAAAAIlm/2aGAACQaGZm9sYIAJ2oZv9mxggAnchmZmbGCACdiGZmZowIAN2IyGbGiAAA0IuIqoy4AADQvYiIiAsAAADdu4i4AAAAAACwuwsAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "monster01"
-    },
-    "image10": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAzMzMAAAAAMTiqsrMAABALKoqqsZABEQsqqqqzFRFVeyuqqoMRFVVxSwqqgxARFVV7KqqDABAzMyqqqrMAAAsLqqqqsYAAMzM7qpmzAAAAMDMzMwAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "monster03"
-    },
-    "image9": {
-        "data": "hwQQABAAAAAA7u4AAAAAAOC7u+4OAAAAAO7Ou+sA7gAAAODOzO7qAAAAAODLrg4AwMzMAe7uDgBM293MZtwMAEy90s1mzAzMTN3dzHbNwM1MvdLNdtzMzEzb3cx2380ATN29/Hb3zMxM3bv8dnf/z8C0y293d3fPAMwM//9nZvYAAAAAAP//Dw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "monster02"
-    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",

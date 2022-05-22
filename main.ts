@@ -8,13 +8,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, l
     currentLevel += 1
     if (currentLevel != numberOfLevel) {
         setLevelMap(currentLevel)
-    }
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (rightdir == true) {
-        projectile = sprites.createProjectileFromSprite(assets.image`phi_tieu`, ninja, 100, 0)
     } else {
-        projectile2 = sprites.createProjectileFromSprite(assets.image`phi_tieu`, ninja, -100, 0)
+        game.over(true)
     }
 })
 function monsterRun () {
@@ -75,9 +70,60 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Monster, function (sprite, other
     mainDie()
 })
 function createMonster () {
-    Monster01 = sprites.create(assets.image`monster01`, SpriteKind.Monster)
-    Monster02 = sprites.create(assets.image`monster03`, SpriteKind.Monster)
-    Monster03 = sprites.create(assets.image`monster02`, SpriteKind.Monster)
+    Monster01 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Monster)
+    Monster02 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Monster)
+    Monster03 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Monster)
     tiles.placeOnTile(Monster01, tiles.getTileLocation(6, 11))
     tiles.placeOnTile(Monster02, tiles.getTileLocation(11, 20))
     tiles.placeOnTile(Monster03, tiles.getTileLocation(20, 23))
@@ -112,23 +158,20 @@ scene.onOverlapTile(SpriteKind.Monster, sprites.dungeon.purpleOuterWest1, functi
 scene.onOverlapTile(SpriteKind.Monster, assets.tile`trap`, function (sprite, location) {
     Monster03.setVelocity(72, 0)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`dameTile1`, function (sprite, location) {
-    info.changeScoreBy(-1)
-    mainDie()
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Monster, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    otherSprite.destroy()
 })
 function clearMap () {
     for (let value of sprites.allOfKind(SpriteKind.Weapon)) {
         value.destroy()
     }
 }
+let rightdir = false
 let projectile5: Sprite = null
 let Monster03: Sprite = null
 let Monster02: Sprite = null
 let Monster01: Sprite = null
-let projectile2: Sprite = null
-let projectile: Sprite = null
-let rightdir = false
-let dame: Sprite = null
 let currentLevel = 0
 let numberOfLevel = 0
 let ninja: Sprite = null
@@ -140,12 +183,6 @@ scene.cameraFollowSprite(ninja)
 controller.moveSprite(ninja, 65, 65)
 ninja.setStayInScreen(true)
 info.setLife(3)
-numberOfLevel = 2
+numberOfLevel = 3
 currentLevel = 1
 setLevelMap(currentLevel)
-let weapon1 = sprites.create(assets.image`weapon1`, SpriteKind.Weapon)
-tiles.placeOnRandomTile(weapon1, assets.tile`weapon1`)
-while (true) {
-    dame = sprites.createProjectileFromSprite(assets.image`dame1`, weapon1, 0, 50)
-    pause(1000)
-}
